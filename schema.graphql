@@ -1,0 +1,250 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type FRONTENDLOGS {
+  content: String
+  dateTime: String!
+  eventid: Int
+  host: String
+  logType: String
+  mode: String
+  streamType: String
+  userToken: String!
+  userType: String
+}
+
+type FRONTENDLOGSConnection {
+  items: [FRONTENDLOGS]
+  nextToken: String
+}
+
+type MULTICREATORSHAREDDATA {
+  data: String
+  id: String!
+  version: Int
+}
+
+type MULTICREATORSHAREDDATAConnection {
+  items: [MULTICREATORSHAREDDATA]
+  nextToken: String
+}
+
+type Mutation {
+  createFRONTENDLOGS(input: CreateFRONTENDLOGSInput!): FRONTENDLOGS
+  createMULTICREATORSHAREDDATA(input: CreateMULTICREATORSHAREDDATAInput!): MULTICREATORSHAREDDATA
+  createSTREAMCOUNTS(input: CreateSTREAMCOUNTSInput!): STREAMCOUNTS
+  createTICKETACTIVEDEVICES(input: CreateTICKETACTIVEDEVICESInput!): TICKETACTIVEDEVICES
+  deleteFRONTENDLOGS(input: DeleteFRONTENDLOGSInput!): FRONTENDLOGS
+  deleteMULTICREATORSHAREDDATA(input: DeleteMULTICREATORSHAREDDATAInput!): MULTICREATORSHAREDDATA
+  deleteSTREAMCOUNTS(input: DeleteSTREAMCOUNTSInput!): STREAMCOUNTS
+  deleteTICKETACTIVEDEVICES(input: DeleteTICKETACTIVEDEVICESInput!): TICKETACTIVEDEVICES
+  updateFRONTENDLOGS(input: UpdateFRONTENDLOGSInput!): FRONTENDLOGS
+  updateMULTICREATORSHAREDDATA(input: UpdateMULTICREATORSHAREDDATAInput!): MULTICREATORSHAREDDATA
+  updateSTREAMCOUNTS(input: UpdateSTREAMCOUNTSInput!): STREAMCOUNTS
+  updateTICKETACTIVEDEVICES(input: UpdateTICKETACTIVEDEVICESInput!): TICKETACTIVEDEVICES
+}
+
+type Query {
+  getFRONTENDLOGS(dateTime: String!, userToken: String!): FRONTENDLOGS
+  getMULTICREATORSHAREDDATA(id: String!): MULTICREATORSHAREDDATA
+  getSTREAMCOUNTS(streamid: Int!): STREAMCOUNTS
+  getTICKETACTIVEDEVICES(id: String!): TICKETACTIVEDEVICES
+  listFRONTENDLOGS(filter: TableFRONTENDLOGSFilterInput, limit: Int, nextToken: String): FRONTENDLOGSConnection
+  listMULTICREATORSHAREDDATAS(filter: TableMULTICREATORSHAREDDATAFilterInput, limit: Int, nextToken: String): MULTICREATORSHAREDDATAConnection
+  listSTREAMCOUNTS(filter: TableSTREAMCOUNTSFilterInput, limit: Int, nextToken: String): STREAMCOUNTSConnection
+  listTICKETACTIVEDEVICES(filter: TableTICKETACTIVEDEVICESFilterInput, limit: Int, nextToken: String): TICKETACTIVEDEVICESConnection
+}
+
+type STREAMCOUNTS {
+  active: Int
+  streamid: Int!
+  total: Int
+}
+
+type STREAMCOUNTSConnection {
+  items: [STREAMCOUNTS]
+  nextToken: String
+}
+
+type Subscription {
+  onCreateFRONTENDLOGS(dateTime: String, userToken: String): FRONTENDLOGS @aws_subscribe(mutations : ["createFRONTENDLOGS"])
+  onCreateMULTICREATORSHAREDDATA(data: String, id: String): MULTICREATORSHAREDDATA @aws_subscribe(mutations : ["createMULTICREATORSHAREDDATA"])
+  onCreateSTREAMCOUNTS(streamid: Int): STREAMCOUNTS @aws_subscribe(mutations : ["createSTREAMCOUNTS"])
+  onCreateTICKETACTIVEDEVICES(id: String): TICKETACTIVEDEVICES @aws_subscribe(mutations : ["createTICKETACTIVEDEVICES"])
+  onDeleteFRONTENDLOGS(dateTime: String, userToken: String): FRONTENDLOGS @aws_subscribe(mutations : ["deleteFRONTENDLOGS"])
+  onDeleteMULTICREATORSHAREDDATA(data: String, id: String): MULTICREATORSHAREDDATA @aws_subscribe(mutations : ["deleteMULTICREATORSHAREDDATA"])
+  onDeleteSTREAMCOUNTS(streamid: Int): STREAMCOUNTS @aws_subscribe(mutations : ["deleteSTREAMCOUNTS"])
+  onDeleteTICKETACTIVEDEVICES(id: String): TICKETACTIVEDEVICES @aws_subscribe(mutations : ["deleteTICKETACTIVEDEVICES"])
+  onUpdateFRONTENDLOGS(dateTime: String, userToken: String): FRONTENDLOGS @aws_subscribe(mutations : ["updateFRONTENDLOGS"])
+  onUpdateMULTICREATORSHAREDDATA(data: String, id: String): MULTICREATORSHAREDDATA @aws_subscribe(mutations : ["updateMULTICREATORSHAREDDATA"])
+  onUpdateSTREAMCOUNTS(streamid: Int): STREAMCOUNTS @aws_subscribe(mutations : ["updateSTREAMCOUNTS"])
+  onUpdateTICKETACTIVEDEVICES(id: String): TICKETACTIVEDEVICES @aws_subscribe(mutations : ["updateTICKETACTIVEDEVICES"])
+}
+
+type TICKETACTIVEDEVICES {
+  device_id: String
+  id: String!
+}
+
+type TICKETACTIVEDEVICESConnection {
+  items: [TICKETACTIVEDEVICES]
+  nextToken: String
+}
+
+input CreateFRONTENDLOGSInput {
+  content: String
+  dateTime: String!
+  eventid: Int
+  host: String
+  logType: String
+  mode: String
+  streamType: String
+  userToken: String!
+  userType: String
+}
+
+input CreateMULTICREATORSHAREDDATAInput {
+  data: String
+  id: String!
+  version: Int
+}
+
+input CreateSTREAMCOUNTSInput {
+  active: Int
+  streamid: Int!
+  total: Int
+}
+
+input CreateTICKETACTIVEDEVICESInput {
+  device_id: String
+  id: String!
+}
+
+input DeleteFRONTENDLOGSInput {
+  dateTime: String!
+  userToken: String!
+}
+
+input DeleteMULTICREATORSHAREDDATAInput {
+  id: String!
+}
+
+input DeleteSTREAMCOUNTSInput {
+  streamid: Int!
+}
+
+input DeleteTICKETACTIVEDEVICESInput {
+  id: String!
+}
+
+input TableBooleanFilterInput {
+  eq: Boolean
+  ne: Boolean
+}
+
+input TableFRONTENDLOGSFilterInput {
+  content: TableStringFilterInput
+  dateTime: TableStringFilterInput
+  eventid: TableIntFilterInput
+  host: TableStringFilterInput
+  logType: TableStringFilterInput
+  mode: TableStringFilterInput
+  streamType: TableStringFilterInput
+  userToken: TableStringFilterInput
+  userType: TableStringFilterInput
+}
+
+input TableFloatFilterInput {
+  between: [Float]
+  contains: Float
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+  notContains: Float
+}
+
+input TableIDFilterInput {
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+}
+
+input TableIntFilterInput {
+  between: [Int]
+  contains: Int
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+  notContains: Int
+}
+
+input TableMULTICREATORSHAREDDATAFilterInput {
+  id: TableStringFilterInput
+}
+
+input TableSTREAMCOUNTSFilterInput {
+  streamid: TableIntFilterInput
+}
+
+input TableStringFilterInput {
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+}
+
+input TableTICKETACTIVEDEVICESFilterInput {
+  device_id: TableStringFilterInput
+  id: TableStringFilterInput
+}
+
+input UpdateFRONTENDLOGSInput {
+  content: String
+  dateTime: String!
+  eventid: Int
+  host: String
+  logType: String
+  mode: String
+  streamType: String
+  userToken: String!
+  userType: String
+}
+
+input UpdateMULTICREATORSHAREDDATAInput {
+  data: String
+  expectedVersion: Int
+  id: String!
+}
+
+input UpdateSTREAMCOUNTSInput {
+  active: Int
+  streamid: Int!
+  total: Int
+}
+
+input UpdateTICKETACTIVEDEVICESInput {
+  device_id: String
+  id: String!
+}

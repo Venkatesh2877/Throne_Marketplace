@@ -1,0 +1,546 @@
+    .banner-con {
+        min-height: 100vh;
+        color: #22223D;
+
+        .image-banner {
+            min-height: 65vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .banner-content-con {
+            min-height: 35vh;
+            position: relative;
+            text-align: center;
+            padding-top: 60px;
+            color: #fff !important;
+
+            .banner-profile-img {
+                position: absolute;
+                height: 120px;
+                width: 120px;
+                border-radius: 50%;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, -50%);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-color: #22223D;
+            }
+
+
+            .main-head {
+                font-size: 28px;
+                font-weight: 500;
+            }
+
+            .createdBy {
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            .creator-name {
+                color: #F9F9F9;
+                margin-left: 10px;
+            }
+
+            .b-desc {
+                margin-top: 40px;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .card-Sec1 {
+        .cards-con {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            padding: 20px;
+            place-items: center;
+
+            .cards {
+                display: inline-block;
+                width: 320px;
+                border-radius: 8px;
+                overflow: hidden;
+                background-color: #fff;
+                margin-top: 15px;
+                text-align: center;
+                height: 100%;
+
+                .imagediv {
+                    width: 100%;
+                    height: 300px;
+                    background-size: cover;
+                    background-position: center;
+                    position: relative;
+                    background-repeat: no-repeat;
+                    background-color: #22223D;
+
+                }
+
+                .desc-con1 {
+                    padding: 20px;
+                    color: #000 !important;
+
+                    .des-h1 {
+                        font-size: 20px;
+                        font-weight: 800;
+                        margin-bottom: 4px !important;
+                    }
+
+                    .dec {
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+                }
+
+                .b-con {
+                    font-size: 18px;
+                    color: #22223D;
+                }
+
+                .b-now {
+                    color: #393939;
+                }
+            }
+        }
+    }
+
+    .sticky {
+        position: sticky;
+        top: 60px;
+        padding: 30px;
+        z-index: 1;
+        background-color: #22223D;
+    }
+
+    .s-con {
+        width: 100%;
+        position: relative;
+        font-size: 16px;
+
+        input.s-input {
+            width: 100%;
+            border-radius: 20px;
+            padding: 14px 14px 14px 35px;
+            outline: none;
+            border: none;
+            box-shadow: none;
+            color: #fff;
+            background-color: #222C36;
+
+            &:active,
+            &:hover {
+                outline: none;
+                border: none;
+                box-shadow: none;
+            }
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+
+        i {
+            position: absolute;
+            top: 48%;
+            transform: translateY(-50%);
+            left: 10px;
+            color: #fff;
+        }
+    }
+
+    .dropdown {
+        color: #fff;
+        display: inline-block;
+        margin-left: 10px;
+
+        .d-btn {
+            min-width: 130px;
+            padding: 14px 10px 14px 14px;
+            background-color: #222C36;
+            border: none;
+            color: #fff;
+            text-align: left;
+            border-radius: 30px;
+            font-size: 16px;
+            position: relative;
+
+            .d-name {
+                margin-right: 60px;
+            }
+
+            .arrow {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #fff;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        background-color: #222C36;
+        font-size: 16px;
+
+        .dropdown-item {
+            color: #fff;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #22223D;
+            }
+        }
+    }
+
+    .panel {
+        background-color: #22223D;
+        padding: 60px 0px 2px 0px;
+
+    }
+
+    .panel .arrow {
+        font-size: 30px;
+        color: #fff;
+        padding-bottom: 15px;
+    }
+
+    .panel .arrow .icon1 {
+        display: inline-block;
+        content: "&#xf060";
+        border: 0px;
+        position: relative;
+        color: #fff;
+        padding-right: 10px;
+        padding-left: 115px;
+        font-size: 30px;
+        font-weight: 600;
+        font-family: "Font Awesome 5 Free"
+    }
+
+    .panel .panel-wrapper {
+        padding-left: 100px;
+    }
+
+    .panel .panel-wrapper .invision {
+        border-radius: 7px;
+        height: 720px;
+        width: 100%;
+    }
+
+    .panel .panel-wrapper .panel-1 {
+        background-color: #222C36;
+        padding: 40px 0px 20px 40px;
+        margin: 70px 0px;
+        border-radius: 20px;
+    }
+
+    .panel .panel-wrapper .panel-1 .h3 {
+        color: #fff;
+        font-size: 32px;
+    }
+
+    .panel .panel-wrapper .panel-1 .para {
+        color: #73ACA0;
+        padding: 20px 0px;
+        font-size: 24px;
+    }
+
+    .invision1 {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+        margin-right: 10px;
+    }
+
+    .panel .panel-wrapper .panel-1 .para1 {
+        color: #fff;
+        font-size: 24px;
+        padding-bottom: 42px;
+        line-height: 1.4;
+    }
+
+    .panel .panel-wrapper .panel-2 {
+        background-color: #222C36;
+        padding: 40px;
+        margin-top: 60px;
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    .panel .panel-wrapper .panel-2 .h3 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .panel .panel-wrapper.panel-2 .para1 .text-end {
+        text-align: right;
+    }
+
+    .panel .panel-wrapper .panel-2 .para {
+        padding-bottom: 0px;
+        font-size: 24px;
+    }
+
+    .panel .panel-wrapper .panel-2 .para1 {
+        color: #6086FF;
+        padding-bottom: 0px;
+        font-size: 24px;
+    }
+
+
+    .panel .panel-wrapper2 {
+        padding-right: 60px;
+        padding-left: 30px;
+    }
+
+    .panel .rw1 {
+        border-bottom: 3px solid #505254;
+    }
+
+    .panel .text-start .P1 {
+        color: #84D9CA;
+        font-size: 28px;
+        margin-left: -13px;
+        padding-bottom: 10px;
+    }
+
+    .panel .text-start .h2 {
+        color: #fff;
+        font-size: 36px;
+        margin-left: -13px;
+        padding-bottom: 15px;
+    }
+
+    .panel .text-end .icon2 {
+        position: relative;
+        content: "\f004";
+        text-align: right;
+        color: #fff;
+        font-family: "font Awesome 5 free";
+        font-weight: 600;
+    }
+
+    .panel .panel-wrapper2 .rw2 {
+        padding: 50px 0px;
+    }
+
+    .panel .panel-wrapper2 .rw2 .P2 {
+        color: #505254;
+        font-size: 32px;
+        margin-left: -13px;
+        padding-bottom: 20px;
+    }
+
+    .panel .panel-wrapper2 .rw2 .P3 {
+        color: #fff;
+        font-size: 40PX;
+        margin-left: -11px;
+    }
+
+    .panel .panel-wrapper2 .rw2 .img3 {
+        width: 30px;
+        height: 30px;
+        background-color: #22223D;
+        position: relative;
+        padding-right: 10px;
+    }
+
+    .panel .panel-wrapper2 .rw2 .btn {
+        display: inline-block;
+        background-color: #84D9CA;
+        color: #22223D;
+        padding: 20px 100px;
+        border-radius: 10px;
+        font-size: 32px;
+        font-weight: 700;
+        margin-right: -13px;
+    }
+
+    .panel .panel-wrapper2 .rw3 {
+        background-color: #222C36;
+        color: #fff;
+        padding: 40px 0px 40px 40px;
+        margin-left: -13px;
+        margin-right: -13px;
+        border-radius: 20px;
+
+    }
+
+    .panel .panel-wrapper2 .rw3 .h2 {
+        font-size: 30px;
+    }
+
+    .panel .panel-wrapper2 .rw3 .p1 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .panel .panel-wrapper2 .rw3 .P2 {
+        color: #73ACA0;
+        font-size: 23px;
+    }
+
+    .panel .panel-wrapper2 .rw4 {
+        background: #22223D;
+        color: #fff;
+        margin: 50px 0px;
+        padding: 40px 100px 40px 40px;
+        margin-left: -13px;
+        margin-right: -13px;
+        border-radius: 20px;
+    }
+
+    .panel .panel-wrapper2 .rw4 .h1 {
+        font-size: 28px;
+    }
+
+    .panel .panel-wrapper2 .rw4 .time {
+        background-color: #222C36;
+        color: #fff;
+        text-align: center;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+    .panel .panel-wrapper2 .rw4 .time .h1 {
+        font-size: 60px;
+        padding-top: 40px;
+    }
+
+    .panel .panel-wrapper2 .rw4 .time .p {
+        font-size: 28px;
+        padding: 30px 0px;
+    }
+
+    .panel .panel-wrapper2 .rw4 .time-p {
+        color: #4D4D4D;
+        font-weight: 500;
+        font-size: 24px;
+        padding-top: 5px;
+    }
+
+    .panel .panel-wrapper2 .rw5 {
+        background-color: #222C36;
+        padding: 40px;
+        color: #fff;
+        margin-bottom: 0px;
+        padding: 40px 0px 40px 40px;
+        margin-left: -13px;
+        margin-right: -13px;
+        border-radius: 20px;
+    }
+
+    .panel .panel-wrapper2 .rw5 .r {
+        border-bottom: 3px solid #505254;
+        margin-left: -39px;
+        margin-right: 0px;
+        padding: 0px 40px 0px 40px
+    }
+
+    .panel .panel-wrapper2 .rw5 .h2 {
+        font-size: 30px;
+    }
+
+    .panel .panel-wrapper2 .rw5 .icon3 {
+        content: "\f106";
+        font-size: 50px;
+    }
+
+    .panel .panel-wrapper2 .rw5 .rw5-r {
+        background-color: #22223D;
+        margin: 50px 0px;
+        padding: 10px 20px 0px 10px;
+        border-radius: 5px;
+    }
+
+    .panel .panel-wrapper2 .rw5 .rw5-r .icon4 {
+        font-size: 20px;
+    }
+
+    .panel .panel-wrapper2 .rw5 .p4 {
+        padding: 10px 20px;
+    }
+
+    .panel .panel-wrapper2 .rw5 .rw5-r1 {
+        margin: 50px 0px;
+        /* padding: 10px 20px 0px 10px; */
+    }
+
+    .panel .panel-wrapper2 .rw5 .rw5-r1 .p4 {
+        font-size: 16px;
+    }
+
+    .panel .panel-wrapper2 .rw5-r1 .img3 {
+        width: 30px;
+        margin-right: 10px;
+        background-color: #22223D;
+        position: relative;
+    }
+
+
+    .panel .panel-wrapper3 {
+        background-color: #222C36;
+        margin: 70px 60px 70px 110px;
+        border-radius: 15px;
+    }
+
+    .panel .panel-wrapper3 .table1 {
+        padding: 40px 40px 15px 40px;
+        border-bottom: 2px solid #8C8D8E;
+        color: #fff;
+    }
+
+    .panel .panel-wrapper3 .table1 .p4 {
+        font-size: 26px;
+
+    }
+
+    .fa-angle-up:before {
+        content: "\f106";
+        font-size: 40px;
+    }
+
+    .panel .panel-wrapper3 .table3 {
+        margin: 40px;
+        padding-bottom: 40px;
+    }
+
+    .table .thead-dark th {
+        color: #D0D0D0;
+        background-color: #22223D;
+        border-bottom: 1px solid #22223D;
+        padding: 30px;
+        font-size: 20px;
+    }
+
+    .img3 {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        background-color: #22223D;
+        position: relative;
+        color: #fff;
+    }
+
+    .table td {
+        padding: 30PX;
+        color: #fff;
+        font-size: 24px;
+        background-color: #22223D;
+        border-bottom: 1px solid #3C3F42;
+    }
+
+    .panel .panel-wrapper3 .table3 .table {
+        border-bottom: 3px solid #4f5964;
+    }
+
+    .table .p {
+        color: #5E83FA;
+    }

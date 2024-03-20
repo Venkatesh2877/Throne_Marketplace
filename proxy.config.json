@@ -1,0 +1,8 @@
+{
+  "/api/v2/afc/*": {
+    "target": "https://dev.arevea.tv",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

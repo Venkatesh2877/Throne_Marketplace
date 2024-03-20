@@ -1,0 +1,204 @@
+<div class="crypto-event">
+    <div class="banner-con">
+        <div class="image-banner" [ngStyle]="{'background-image':' url(' + ImageData + ')'}">
+        </div>
+        <div class="banner-content-con">
+            <div class="banner-profile-img" [ngStyle]="{'background-image':' url(' + pofiledata + ')'}">
+
+            </div>
+            <div class="b-heading-con">
+                <h5 class="main-head">
+                    Snoop Dogg - B.O.D.R
+                </h5>
+                <h6 class="createdBy">
+                    <span>Created By</span> <span class="creator-name ">DEATHROWNFT</span>
+                </h6>
+
+                <div class="b-desc">
+                    NFTs of Snoop Dogg's B.O.D.R., brought to you exclusively by Arevea.
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="filter sticky">
+        <div class="row no-gutter">
+            <div class="col-4">
+                <div class="s-con">
+                    <input type="text" class="s-input" placeholder="Search by name" [(ngModel)]="searchfil">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div class="col-8 text-right">
+                <!--  -->
+                <div class="dropdown">
+                    <button class=" d-btn " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="d-name">All Items</span>
+                        <span class="arrow align-middle"></span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item">Action</a>
+                        <a class="dropdown-item">Another action</a>
+                        <a class="dropdown-item">Something else here</a>
+                    </div>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="dropdown">
+                    <button class=" d-btn " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="d-name">Filter</span>
+                        <span class="arrow align-middle"></span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item">Action</a>
+                        <a class="dropdown-item">Another action</a>
+                        <a class="dropdown-item">Something else here</a>
+                    </div>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="dropdown">
+                    <button class=" d-btn " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="d-name">Sort By</span>
+                        <span class="arrow align-middle"></span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item">Action</a>
+                        <a class="dropdown-item">Another action</a>
+                        <a class="dropdown-item">Something else here</a>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+        </div>
+    </section>
+    <section class="card-Sec1">
+        <div class="cards-con">
+            <!--  -->
+            <!-- <div *ngFor="let item of newApi ">
+                <div class="cards pointer" (click)="getdata(item)">
+                    <div class="imagediv" [ngStyle]="{'background-image':' url(' + item.file + ')'}">
+                    </div> -->
+            <div *ngFor="let item of tokenURIsList ">
+                <div class="cards pointer">
+                    <div class="imagediv"  (click)="getdata(item)"
+                        [ngStyle]="{'background-image':' url(https://ipfs.io/ipfs/' + item.img_hash + ')'}">
+                    </div>
+                    <div class="desc-con1">
+                        <div class="row no-gutters">
+                            <div class="col-7 text-left">
+                                <h6 class="des-h1"> {{item.name}}</h6>
+                                <div class="desc-channel-name">{{item.description}}</div>
+                            </div>
+                            <div class="col-5 text-right">
+                                <div class="b-con">
+                                    <div class="token">
+                                        <span class="img align-middle"><img src="" alt=""> </span> <span
+                                            class="align-middle amount ml-2"> {{item.price}} </span>
+                                    </div>
+
+                                    <div class="token">
+                                        <span class="img align-middle"><img src="" alt=""> </span> <span
+                                        style="font-size: 25px; font-weight: 600;" class="align-middle amount ml-2"> #{{item.unique_id}} </span>
+                                    </div>
+                                    <div class="b-now mb-2" (click)="getCopies(item)">
+                                        check copies
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngFor="let item of lazymintData">
+                <div class="cards pointer">
+                    <div class="imagediv"
+                        [ngStyle]="{'background-image':' url(https://ipfs.io/ipfs/' + item.token_uri+')'}">
+                    </div>
+                    <div class="desc-con1">
+                        <div class="row no-gutters">
+                            <div class="col-7 text-left">
+                                <h6 class="des-h1"> {{item.name}}</h6>
+                                <div class="desc-channel-name">{{item.description}}</div>
+                            </div>
+                            <div class="col-5 text-right">
+                                <div class="b-con">
+                                    <div class="b-now mb-2">
+                                       Price {{item.price}}
+                                    </div>
+                                    <div class="b-now mb-2" (click)="onBuyLazymint(item.v, item.r, item.s , item.token_id , item.price , item.token_uri, item.signature, item.id, item.name, item.description, item.sale_type)" style="margin-top: 10px;">
+                                        Buy Now
+                                    </div>
+                                    <div class="token">
+                                        <span class="img align-middle"><img src="" alt=""> </span> <span
+                                            class="align-middle amount ml-2"> {{item.salePrice}} </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngFor="let item of batchmintNFT">
+                <div class="cards pointer">
+                    <div class="imagediv" 
+                        [ngStyle]="{'background-image':' url(https://ipfs.io/ipfs/' + item.token_uri+')'}">
+                    </div>
+                    <div class="desc-con1">
+                        <div class="row no-gutters">
+                            <div class="col-7 text-left">
+                                <h6 class="des-h1"> {{item.name}}</h6>
+                                <div class="desc-channel-name">{{item.description}}</div>
+                            </div>
+                            <div class="col-5 text-right">
+                                <div class="b-con">
+                                    <div class="b-now mb-2">
+                                       Price {{item.price}}
+                                    </div>
+                                    <div class="token">
+                                        <span class="img align-middle"><img src="" alt=""> </span> <span
+                                        style="font-size: 25px; font-weight: 600;" class="align-middle amount ml-2"> #{{item.batch_id}}/{{item.token_id}} </span>
+                                    </div>
+                                    <div class="b-now mb-2" (click)="onBuyBatch(item.price, item.batch_id, item.name, item.token_uri, item.description)" style="margin-top: 10px;">
+                                        Buy Now
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div *ngFor="let item of buyNftData">
+                <div class="cards pointer" >
+                    <div class="imagediv" (click)="getdata1(item)"
+                        [ngStyle]="{'background-image':' url(https://ipfs.io/ipfs/' + item.token_uri+')'}">
+                    </div>
+                    <div class="desc-con1">
+                        <div class="row no-gutters">
+                            <div class="col-7 text-left">
+                                <h6 class="des-h1"> {{item.name}}</h6>
+                                <div class="desc-channel-name">{{item.description}}</div>
+                            </div>
+                            <div class="col-5 text-right">
+                                <div class="b-con">
+                                    <div class="b-now mb-2">
+                                       Price {{item.price}}
+                                    </div>
+                                    <div class="token">
+                                        <span class="img align-middle"><img src="" alt=""> </span> <span
+                                            class="align-middle amount ml-2"> {{item.salePrice}} </span>
+                                    </div>
+                                    <div class="b-now mb-2" (click)="getCopies(item)">
+                                        check copies
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+</div>

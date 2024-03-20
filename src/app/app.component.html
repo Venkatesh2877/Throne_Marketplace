@@ -1,0 +1,35 @@
+<!-- <div *ngIf="otherDevice">
+<router-outlet></router-outlet>
+</div>
+<div *ngIf="!otherDevice">
+    <h5 class="text-center pt-40 fs-16">Please use ThroneTV Mobile apps</h5>
+</div> -->
+<ng-container *ngIf="(deviceInfo == 'android' ) && deviceType == 'browser' && hideContent">
+    <h5 class="text-center pt-40 fs-16 plr-10">
+        Please download Arevea's app from Play Store to watch the {{content}} stream on mobile.</h5>
+    <div class="text-center mt-20">
+        <a href="https://play.google.com/store/apps/details?id=com.arevea.tv"><img
+                src="assets/website/homepage/googleplay.png" class="store-img"></a>
+    </div>
+</ng-container>
+<ng-container *ngIf="(deviceInfo == 'ios' ) && deviceType == 'browser' && hideContent">
+    <h5 class="text-center pt-40 fs-16 plr-10">Please download Arevea's app from App Store to watch the {{content}} stream on mobile.</h5>
+    <div class="text-center mt-20">
+        <a href="https://apps.apple.com/in/app/arevea/id1535047464"><img src="assets/website/homepage/appstore.png"
+                class="store-img"></a>
+    </div>
+</ng-container>
+<!-- <div *ngIf="!otherDevice" fxLayout="row">
+    <span><i class="fa fa-close f-r fs-22" (click)="closePopup()"></i></span>
+    <img src="assets/mobile-logo.png" height="40">
+    <h6>hkjhhkhkj</h6>
+    <button
+                            mat-flat-button class="flat-primary-button" (click)="getTickets()">Get Tickets</button>
+</div> -->
+<ng-container *ngIf="!hideContent || deviceInfo == 'web'">
+    <router-outlet></router-outlet>
+    <ngx-ui-loader></ngx-ui-loader>
+</ng-container>
+<ng-container *ngIf="!hidePrivateChat && (userInfo?.signedIn || router.url.includes('/stream/') || router.url.includes('/event/schedule/')) && (!router.url.includes('/payment/') && !router.url.includes('/private-chat/') && !router.url.includes('/contacts/')) && !router.url.includes('/preview') && !router.url.includes('/place-order') && deviceType == 'browser' && deviceInfo == 'web'">
+    <app-private-chat></app-private-chat>
+</ng-container>

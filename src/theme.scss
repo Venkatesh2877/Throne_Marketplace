@@ -1,0 +1,91 @@
+//$font-stack: "Open Sans", sans-serif;
+@import '~@angular/material/theming';
+@include mat-core();
+$mat-arevea-primary: ( 
+    50: #ffeeeb, 
+    100: #ffd5ce, 
+    200: #ffb9ad, 
+    300: #ff9d8c, 
+    400: #ff8873, 
+    500: #8ce6d6, 
+    600: #ff6b52, 
+    700: #ff6048,
+    800: #ff563f, 
+    900: #8ce6d6, 
+    A100: #ffffff,
+    A200: #ffffff, 
+    A400: #ffddda, 
+    A700: #ffc6c0, 
+    contrast: (
+        50: #000000, 
+        100: #000000, 
+        200: #000000, 
+        300: #000000, 
+        400: #000000, 
+        500: #ffffff, 
+        600: #000000, 
+        700: #030202, 
+        800: #000000, 
+        900: #000000, 
+        A100: #000000,
+        A200: #000000, 
+        A400: #000000, 
+        A700: #000000
+        )
+    );
+$mat-arevea-accent: ( 
+    50: #f8f8f8, 
+    100: #EBF1F8, 
+    200: #DFECF3, 
+    300: #D4E8EE, 
+    400: #C8E3E9, 
+    500: #AAD7DD, 
+    600: #8ce6d6, 
+    700: #93CED3, 
+    800: #8DCCD0, 
+    900: #87CACE, 
+    A100: #81C7CB, 
+    A200: #7bc5c9, 
+    A400: #000000, 
+    A700: #FFFFFF, 
+    contrast: ( 
+        50: $black-87-opacity, 
+        100: $black-87-opacity, 
+        200: $black-87-opacity, 
+        300: $black-87-opacity, 
+        400: $black-87-opacity, 
+        500: white, 
+        600: white, 
+        700: white, 
+        800: $white-87-opacity, 
+        900: $white-87-opacity, 
+        A100: $black-87-opacity, 
+        A200: white, 
+        A400: white, 
+        A700: white
+        )
+    );
+
+    
+$primary: mat-palette($mat-arevea-primary, 500);
+$accent: mat-palette($mat-arevea-accent, 600);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+.primary-color {
+    color: mat-color($primary);
+}
+
+.accent-color {
+    color: mat-color($accent);
+}
+
+.primary-background {
+    background-color: mat-color($primary);
+}
+
+.accent-background {
+    background-color: mat-color($accent);
+}
+.accent-lite-background {
+    background-color: mat-color($accent, 50);
+}
